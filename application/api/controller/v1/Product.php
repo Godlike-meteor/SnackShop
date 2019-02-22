@@ -31,10 +31,21 @@ class Product
     {
         (new IDMustBePostiveInt())->goCheck();
         $products = ProductModel::getProductByCategoryID($id);
-        if($products->isEmpty()){
+        if ($products->isEmpty()) {
             throw new ProductException();
         }
         $products = $products->hidden(['summary']);
         return $products;
+    }
+
+    public function getOne($id)
+    {
+        (new IDMustBePostiveInt())->goCheck();
+
+        $product = ProductModel::getProductDetail($id);
+        if(!$product){
+            throw new ProductException();
+        }
+        return $product;
     }
 }
