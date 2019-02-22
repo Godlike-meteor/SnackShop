@@ -17,10 +17,10 @@ class Token
     public function getToken($code = '')
     {
         (new TokenGet())->goCheck();
-        $ut = new UserToken($code);
-        $token = $ut->get();
+        $userToken = new UserToken($code);
+        $token = $userToken->get();
         return [
-            'token' => $token
+            'token' => $token,
         ];
     }
 }

@@ -16,6 +16,6 @@ class TokenGet extends BaseValidate
     ];
 
     protected $message = [
-        'code' => 'Token获取失败'
+        'code' => 'code必填'
     ];
 }
