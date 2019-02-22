@@ -7,4 +7,5 @@
  */
 return [
     'img_prefix' => 'http://localhost/zerg/public/index.php/images',
+    'token_expire_in' => 7200,
 ];
